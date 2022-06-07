@@ -19,7 +19,7 @@ services:
      image: mysql:8.0.29
      volumes:
        - /opt/test:/var/lib/mysql
-       - ./mysql-dump/:/docker-entrypoint-initdb.d
+       - ./:/docker-entrypoint-initdb.d
      environment:
        MYSQL_DATABASE: gai
        MYSQL_ROOT_PASSWORD: 8018
@@ -77,9 +77,24 @@ Para configurarlo debemos tener en cuenta una vez más "db". Eso es porque tomca
 
 * En volumes le daremos la instrucción para que el .WAR extraído previemente de nuestro proyecto WebApp vaya a la carpeta correcta para que se despliegue nuestra aplicación 
 
+* En ports le asignaremos un puerto diferente al de tomcat normal. ¿Por qué? Pues para no tener ningún conflicto con un posible tomcat ajeno a Docker.
 
+* Y finalmente en environment le daremos una configuración personal al tomcat para gestionarlo también. Para gestionar tomcat se podría hacer uso de tomcat-admin o cosas por el estilo, pero no es estrictamente necesario.
+
+#### Pasos finales
+
+Finalmente guardaremos nuestro archivo que se llamará docker-compose.yml. Seguidamente pondremos en el mismo directorio el proyecto.war y el script de creación de bases de datos.
 
 ## 3. Pasos para el despliegue de la aplicación.
+
+Tras guardar el archivo, desplegar la aplicación es muy sencillo. Colocaremos la ruta de la terminal sobre el directorio dónde tengamos el docker-compose.yml y otros componentes y realizaremos el comando `docker-compose up -d` dónde el -d es para que lo abra como demonio y nosotros podamos seguir utilizando la consola.
+
+### Conexión a tomcat
+![imagen](https://user-images.githubusercontent.com/95173613/172451794-0415afbd-ffdf-4e41-bc72-32bd008e2c48.png)
+
+### Conexión a phpmyadmin
+![imagen](https://user-images.githubusercontent.com/95173613/172452453-b13933f4-159e-46f2-b979-1945059fcbfc.png)
+
 
 ## 4. Preparación y subida de la imagen a dockerhub.
 
