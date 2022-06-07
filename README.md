@@ -2,6 +2,8 @@
 
 ## 1. Introducción
 
+Esta práctica consiste en realizar la actividad del examen valorada en 5 puntos desplegando nuestro propio proyecto en Docker. Nuestro proyecto consiste en 3 imágenes: una con mysql, una con phpmyadmin y otra con tomcat. 
+
 ## 2. Configuración del archivo docker-compose.yml
 
 Para poder desplegar nuestra aplicación correctamente en docker, se hará uso de Docker-compose. Docker-compose es una herramienta que te ayuda a definir aplicaciones multi-contenedor. 
@@ -19,7 +21,7 @@ services:
      image: mysql:8.0.29
      volumes:
        - /opt/test:/var/lib/mysql
-       - ./:/docker-entrypoint-initdb.d
+       - ./mysql-dump:/docker-entrypoint-initdb.d
      environment:
        MYSQL_DATABASE: gai
        MYSQL_ROOT_PASSWORD: 8018
@@ -121,7 +123,7 @@ Podremos apreciar en dockerhub como efectivamente, se ha subido correctamente nu
 
 ## 5. Conclusiones
 
-Sin ser la manera más eficiente para desplegar nuestro proyecto, por magnitud o por desconocimiento, docker te aporta una manera fácil de poder acceder a aplicaciones sin tener instalaciones complicadas.
+Sin ser la manera más eficiente para desplegar nuestro proyecto, por magnitud o por desconocimiento, docker te aporta una manera fácil de poder acceder a aplicaciones sin tener instalaciones complicadas. Seguramente, cuánta más gente tenga el proyecto trabajando en él, más útil nos parecerá. 
 
 ## 6. Anexos
 Imágenes del examen:
