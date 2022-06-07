@@ -121,6 +121,7 @@ Podremos apreciar en dockerhub como efectivamente, se ha subido correctamente nu
 
 ## 5. Conclusiones
 
+Sin ser la manera más eficiente para desplegar nuestro proyecto, por magnitud o por desconocimiento, docker te aporta una manera fácil de poder acceder a aplicaciones sin tener instalaciones complicadas.
 
 ## 6. Anexos
 Imágenes del examen:
