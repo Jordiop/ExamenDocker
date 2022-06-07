@@ -95,8 +95,38 @@ Tras guardar el archivo, desplegar la aplicación es muy sencillo. Colocaremos l
 ### Conexión a phpmyadmin
 ![imagen](https://user-images.githubusercontent.com/95173613/172452453-b13933f4-159e-46f2-b979-1945059fcbfc.png)
 
-
 ## 4. Preparación y subida de la imagen a dockerhub.
+
+Lo primero que debemos hacer es realizar el inicio de sesión en dockerhub. Para ello debemos usar el comando `docker login`
+
+Tras hacer login debemos tener claro qué imágenes son las que necesitamos para nuestro proyecto. Para saberlo tendremos que hacer un análisis en `docker ps`.
+
+![imagen](https://user-images.githubusercontent.com/95173613/172452805-200149fe-2232-477e-afca-0ef8ba4d7aad.png)
+
+En nuestro caso, debemos tener en cuenta tomcat, mysql y phpmyadmin.
+
+Haremos uso del comando `docker tag *nombre_imagen* *nombre_usuario/*nombre_repositorio*`.
+Y también uso del comando `docker push *nombre_usuario*/*nombre_repositorio*.
+
+![imagen](https://user-images.githubusercontent.com/95173613/172454921-adf1c8cd-c7ea-4291-b994-8f4c801ca4dd.png)
+
+![imagen](https://user-images.githubusercontent.com/95173613/172455093-062b1cf4-f636-4e5d-b478-dc1ccbdb7648.png)
+
+![imagen](https://user-images.githubusercontent.com/95173613/172455325-2a4b56b6-aeaa-4cd3-a1e1-8c758ba43750.png)
+
+Podremos apreciar en dockerhub como efectivamente, se ha subido correctamente nuestro contenido.
+
+![imagen](https://user-images.githubusercontent.com/95173613/172455417-4c832ff2-b2eb-4857-a599-cf5782ee1c24.png)
+
 
 ## 5. Conclusiones
 
+
+## 6. Anexos
+Imágenes del examen:
+https://hub.docker.com/u/jordiop
+
+Comandos de descarga de las imágenes 
+`docker pull jordiop/examenp`
+`docker pull jordiop/examenm`
+`docker pull jordiop/exament`
