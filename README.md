@@ -130,6 +130,9 @@ Imágenes del examen:
 https://hub.docker.com/u/jordiop
 
 Comandos de descarga de las imágenes 
+
 `docker pull jordiop/examenp`
+
 `docker pull jordiop/examenm`
+
 `docker pull jordiop/exament`
