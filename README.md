@@ -68,6 +68,14 @@ En este caso, al ser una imagen relativamente sencilla, no necesitaremos configu
 * En ports, esta vez sí, es muy importante darle un puerto libre y asegurarnos de ello, porque de este puerto dependeremos para poder gestionar luego el MySQL.
 * Por útlimo, el environment. Aquí hay que prestar atención al nombre que se le da y a la contraseña porque si no PHPMyAdmin no funcionará.
 
+#### Tomcat
+
+En nuestro proyecto, tomcat es utilizado para alojar tanto el Java (backend) como la página web (frontend).
+Para configurarlo debemos tener en cuenta una vez más "db". Eso es porque tomcat tendrá que enviar y recibir datos de nuestra base de datos previamente configurada. De ahí el `depends_on: db`
+
+* En image simplemente pondremos tomcat, es decir, la predeterminada sin elegir versión. Este hecho no es muy relevante.
+
+* En volumes le daremos la instrucción para que el .WAR extraído previemente de nuestro proyecto WebApp vaya a la carpeta correcta para que se despliegue nuestra aplicación 
 
 
 
